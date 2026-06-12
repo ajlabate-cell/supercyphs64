@@ -1,0 +1,64 @@
+name: Organize Super Cyphs 64 source
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  organize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Unzip files into correct layout
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+
+          mkdir -p build/us
+
+          # Unzip every ZIP except the four special ones into repo root
+          for zip in *.zip; do
+            case "$zip" in
+              lt.zip|ai.zip|1.zip|2.zip)
+                continue
+                ;;
+            esac
+
+            echo "Extracting $zip into repo root"
+            unzip -o "$zip" -d .
+          done
+
+          # Unzip the four special ZIPs into build/us
+          for zip in lt.zip ai.zip 1.zip 2.zip; do
+            if [ -f "$zip" ]; then
+              echo "Extracting $zip into build/us"
+              unzip -o "$zip" -d build/us
+            fi
+          done
+
+          # Remove original ZIP files and hi.txt
+          rm -f *.zip hi.txt
+
+      - name: Commit organized files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Organize Super Cyphs 64 source files"
+            git push
+          fi
