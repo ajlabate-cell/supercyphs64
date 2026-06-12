@@ -1,4 +1,4 @@
-name: Organize Super Cyphs 64 source
+name: Flatten Super Cyphs 64 folders
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  organize:
+  flatten:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
 
@@ -17,38 +17,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Unzip files into correct layout
+      - name: Move unzip folders into repo root
         shell: bash
         run: |
           set -euo pipefail
-          shopt -s nullglob
+          shopt -s dotglob nullglob
 
-          mkdir -p build/us
-
-          # Unzip every ZIP except the four special ones into repo root
-          for zip in *.zip; do
-            case "$zip" in
-              lt.zip|ai.zip|1.zip|2.zip)
-                continue
-                ;;
-            esac
-
-            echo "Extracting $zip into repo root"
-            unzip -o "$zip" -d .
-          done
-
-          # Unzip the four special ZIPs into build/us
-          for zip in lt.zip ai.zip 1.zip 2.zip; do
-            if [ -f "$zip" ]; then
-              echo "Extracting $zip into build/us"
-              unzip -o "$zip" -d build/us
+          for dir in unzip1 unzip2 unzip3 unzip4 unzip5 zip6; do
+            if [ -d "$dir" ]; then
+              echo "Moving contents of $dir into repo root"
+              cp -a "$dir"/. .
+              rm -rf "$dir"
+            else
+              echo "Skipping $dir; folder not found"
             fi
           done
 
-          # Remove original ZIP files and hi.txt
-          rm -f *.zip hi.txt
-
-      - name: Commit organized files
+      - name: Commit flattened repository
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -59,6 +44,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Organize Super Cyphs 64 source files"
+            git commit -m "Flatten extracted source folders"
             git push
           fi
