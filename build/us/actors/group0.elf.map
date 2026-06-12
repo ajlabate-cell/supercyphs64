@@ -1,0 +1,1168 @@
+
+Merging object attributes
+
+
+There are no discarded input sections
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .text set to 0x4000000
+LOAD build/us/actors/group0.o
+                [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x400000))
+                0x00400094                        . = (SEGMENT_START ("text-segment", 0x400000) + SIZEOF_HEADERS)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.interp
+ *(.interp)
+
+.MIPS.abiflags
+ *(.MIPS.abiflags)
+
+.reginfo        0x00400094       0x18
+ *(.reginfo)
+ .reginfo       0x00400094       0x18 build/us/actors/group0.o
+
+.MIPS.xhash
+ *(.MIPS.xhash)
+
+.dynamic
+ *(.dynamic)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.dyn        0x004000ac        0x0
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ *(.rel.dyn)
+ .rel.dyn       0x004000ac        0x0 build/us/actors/group0.o
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+                [!provide]                        PROVIDE (__rel_iplt_start = .)
+ *(.rel.iplt)
+                [!provide]                        PROVIDE (__rel_iplt_end = .)
+
+.rela.dyn       0x004000ac        0x0
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+                [!provide]                        PROVIDE (__rela_iplt_start = .)
+ *(.rela.iplt)
+                [!provide]                        PROVIDE (__rela_iplt_end = .)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(SORT_NONE(.init))
+
+.text           0x04000000        0x0
+                0x04000000                        _ftext = .
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(SORT_BY_NAME(.text.sorted.*))
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ *(.gnu.warning)
+ *(.mips16.fn.*)
+ *(.mips16.call.*)
+
+.fini
+ *(SORT_NONE(.fini))
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+
+.rodata
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.sframe
+ *(.sframe)
+ *(.sframe.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges*)
+
+.plt
+ *(.plt)
+
+.iplt
+ *(.iplt)
+
+.note.build-id
+ *(.note.build-id)
+
+.note.GNU-stack
+ *(.note.GNU-stack)
+
+.note.gnu.property
+ *(.note.gnu.property)
+
+.note.ABI-tag
+ *(.note.ABI-tag)
+
+.note.package
+ *(.note.package)
+
+.note.dlopen
+ *(.note.dlopen)
+
+.note.netbsd.ident
+ *(.note.netbsd.ident)
+
+.note.openbsd.ident
+ *(.note.openbsd.ident)
+                0x04000000                        . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.sframe
+ *(.sframe)
+ *(.sframe.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges*)
+
+.tdata          0x04000000        0x0
+                [!provide]                        PROVIDE (__tdata_start = .)
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x04000000        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x04000000        0x0
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+                [!provide]                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x04000000        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+                0x04000000                        . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.got.plt
+ *(.got.plt)
+
+.data           0x04000000    0x5b520
+                0x04000000                        _fdata = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x04000000    0x5b520 build/us/actors/group0.o
+                0x04003648                mat_mario_button
+                0x040036c0                mat_mario_metal
+                0x04003728                mat_revert_mario_metal
+                0x04003740                mat_mario_hat
+                0x040037f0                mat_revert_mario_hat
+                0x04003808                mat_mario_skin
+                0x04003840                mat_mario_shoes
+                0x04003878                mat_mario_moustache
+                0x040038f0                mat_mario_face_0___Open_Eyes
+                0x04003968                mat_mario_sideburns
+                0x04003a18                mat_revert_mario_sideburns
+                0x04003a30                mat_mario_face_1___Half_Eyes
+                0x04003aa8                mat_mario_face_2___Closed_Eyes
+                0x04003b20                mat_mario_face_7___Dead_Eyes
+                0x04003b98                mat_mario_wingCombined
+                0x04003c00                mat_revert_mario_wingCombined
+                0x04003c18                mat_mario_white
+                0x04003c90                mario_000_offset_bottom_mesh_tri_0
+                0x04003cb0                mario_000_offset_bottom_mesh
+                0x04003cc8                mario_000_offset_bottom_mesh_mat_override_metal_0
+                0x04004030                mario_000_offset_001_Chest_mesh_tri_0
+                0x040040d8                mario_000_offset_001_Chest_mesh_tri_1
+                0x04004168                mario_000_offset_001_Chest_mesh_tri_2
+                0x040041e8                mario_000_offset_001_Chest_mesh
+                0x04004228                mario_000_offset_001_Chest_mesh_mat_override_metal_0
+                0x04004308                mario_000_offset_001_Chest_skinned_tri_0
+                0x04004318                mario_000_offset_001_Chest_skinned
+                0x04004330                mario_000_offset_001_Chest_skinned_mat_override_metal_0
+                0x04004d38                mario_000_displaylist_Head_mesh_tri_0
+                0x04004ee0                mario_000_displaylist_Head_mesh_tri_1
+                0x04004fb8                mario_000_displaylist_Head_mesh_tri_2
+                0x04005028                mario_000_displaylist_Head_mesh_tri_3
+                0x04005058                mario_000_displaylist_Head_mesh_tri_4
+                0x04005088                mario_000_displaylist_Head_mesh_tri_5
+                0x040051e0                mario_000_displaylist_Head_mesh
+                0x04005258                mario_000_displaylist_Head_mesh_mat_override_metal_0
+                0x040052d0                mario_000_displaylist_Head_mesh_mat_override_face_1___Half_Eyes_1
+                0x04005348                mario_000_displaylist_Head_mesh_mat_override_face_2___Closed_Eyes_2
+                0x040053c0                mario_000_displaylist_Head_mesh_mat_override_face_2___Closed_Eyes_3
+                0x04005438                mario_000_displaylist_Head_mesh_mat_override_face_7___Dead_Eyes_4
+                0x04005f10                mario_switchboneHead_displaylistbone_mesh_tri_0
+                0x04006138                mario_switchboneHead_displaylistbone_mesh_tri_1
+                0x04006168                mario_switchboneHead_displaylistbone_mesh_tri_2
+                0x04006198                mario_switchboneHead_displaylistbone_mesh_tri_3
+                0x04006340                mario_switchboneHead_displaylistbone_mesh_tri_4
+                0x040063b0                mario_switchboneHead_displaylistbone_mesh
+                0x04006410                mario_switchboneHead_displaylistbone_mesh_mat_override_metal_0
+                0x04006470                mario_switchboneHead_displaylistbone_mesh_mat_override_face_1___Half_Eyes_1
+                0x040064d0                mario_switchboneHead_displaylistbone_mesh_mat_override_face_2___Closed_Eyes_2
+                0x04006530                mario_switchboneHead_displaylistbone_mesh_mat_override_face_2___Closed_Eyes_3
+                0x04006590                mario_switchboneHead_displaylistbone_mesh_mat_override_face_7___Dead_Eyes_4
+                0x04006620                mario_000_displaylist_001_RWing_mesh_tri_0
+                0x04006638                mario_000_displaylist_001_RWing_mesh
+                0x04006658                mario_000_displaylist_001_RWing_mesh_mat_override_metal_0
+                0x040066a8                mario_000_displaylist_002_LWing_mesh_tri_0
+                0x040066c0                mario_000_displaylist_002_LWing_mesh
+                0x040066e0                mario_000_displaylist_002_LWing_mesh_mat_override_metal_0
+                0x04006790                mario_000_offset_003_LShoulder_mesh_tri_0
+                0x040067f0                mario_000_offset_003_LShoulder_mesh_tri_1
+                0x04006810                mario_000_offset_003_LShoulder_mesh
+                0x04006848                mario_000_offset_003_LShoulder_mesh_mat_override_metal_0
+                0x040068d0                mario_000_offset_003_LShoulder_skinned_tri_0
+                0x040068e0                mario_000_offset_003_LShoulder_skinned
+                0x040068f8                mario_000_offset_003_LShoulder_skinned_mat_override_metal_0
+                0x04006960                mario_000_offset_004_LArm_mesh_tri_0
+                0x040069c0                mario_000_offset_004_LArm_mesh
+                0x040069e0                mario_000_offset_004_LArm_mesh_mat_override_metal_0
+                0x04006a50                mario_000_offset_004_LArm_skinned_tri_0
+                0x04006a60                mario_000_offset_004_LArm_skinned
+                0x04006a78                mario_000_offset_004_LArm_skinned_mat_override_metal_0
+                0x04006b80                mario_000_offset_005_LHand_mesh_tri_0
+                0x04006be0                mario_000_offset_005_LHand_mesh_tri_1
+                0x04006c40                mario_000_offset_005_LHand_mesh
+                0x04006c68                mario_000_offset_005_LHand_mesh_mat_override_metal_0
+                0x04006ce0                mario_000_offset_005_LHand_skinned_tri_0
+                0x04006cf0                mario_000_offset_005_LHand_skinned
+                0x04006d08                mario_000_offset_005_LHand_skinned_mat_override_metal_0
+                0x04006de0                mario_000_displaylist_003_LHand_mesh_tri_0
+                0x04006e78                mario_000_displaylist_003_LHand_mesh
+                0x04006e90                mario_000_displaylist_003_LHand_mesh_mat_override_metal_0
+                0x04006f98                mario_002_switch_option_LOPEN_000_displaylistOption1_LOPEN_mesh_tri_0
+                0x04007060                mario_002_switch_option_LOPEN_000_displaylistOption1_LOPEN_mesh
+                0x04007078                mario_002_switch_option_LOPEN_000_displaylistOption1_LOPEN_mesh_mat_override_metal_0
+                0x04007120                mario_000_offset_006_Rshoulder_mesh_tri_0
+                0x04007180                mario_000_offset_006_Rshoulder_mesh_tri_1
+                0x040071a0                mario_000_offset_006_Rshoulder_mesh
+                0x040071d8                mario_000_offset_006_Rshoulder_mesh_mat_override_metal_0
+                0x04007260                mario_000_offset_006_Rshoulder_skinned_tri_0
+                0x04007270                mario_000_offset_006_Rshoulder_skinned
+                0x04007288                mario_000_offset_006_Rshoulder_skinned_mat_override_metal_0
+                0x040072f0                mario_000_offset_007_RArm_mesh_tri_0
+                0x04007350                mario_000_offset_007_RArm_mesh
+                0x04007370                mario_000_offset_007_RArm_mesh_mat_override_metal_0
+                0x040073e0                mario_000_offset_007_RArm_skinned_tri_0
+                0x040073f0                mario_000_offset_007_RArm_skinned
+                0x04007408                mario_000_offset_007_RArm_skinned_mat_override_metal_0
+                0x04007520                mario_000_offset_008_RHand_mesh_tri_0
+                0x04007580                mario_000_offset_008_RHand_mesh_tri_1
+                0x040075e0                mario_000_offset_008_RHand_mesh
+                0x04007608                mario_000_offset_008_RHand_mesh_mat_override_metal_0
+                0x04007690                mario_000_offset_008_RHand_skinned_tri_0
+                0x040076a0                mario_000_offset_008_RHand_skinned
+                0x040076b8                mario_000_offset_008_RHand_skinned_mat_override_metal_0
+                0x04007790                mario_000_displaylist_004_Rhand_mesh_tri_0
+                0x04007828                mario_000_displaylist_004_Rhand_mesh
+                0x04007840                mario_000_displaylist_004_Rhand_mesh_mat_override_metal_0
+                0x04007948                mario_002_switch_option_LHandOption1_000_displaylist_003__ROPEN_mesh_tri_0
+                0x04007a10                mario_002_switch_option_LHandOption1_000_displaylist_003__ROPEN_mesh
+                0x04007a28                mario_002_switch_option_LHandOption1_000_displaylist_003__ROPEN_mesh_mat_override_metal_0
+                0x04007bc0                mario_002_switch_option_RPEACE_000_displaylist_003__RPEACE_mesh_tri_0
+                0x04007cd0                mario_002_switch_option_RPEACE_000_displaylist_003__RPEACE_mesh
+                0x04007ce8                mario_002_switch_option_RPEACE_000_displaylist_003__RPEACE_mesh_mat_override_metal_0
+                0x04008070                mario_002_switch_option_RCAP_000_displaylist_003_RCAP_mesh_tri_0
+                0x040081d0                mario_002_switch_option_RCAP_000_displaylist_003_RCAP_mesh_tri_1
+                0x04008268                mario_002_switch_option_RCAP_000_displaylist_003_RCAP_mesh
+                0x04008298                mario_002_switch_option_RCAP_000_displaylist_003_RCAP_mesh_mat_override_metal_0
+                0x04008698                mario_002_switch_option_RCAPHAND_000_displaylist_003_RCAPHAND_mesh_tri_0
+                0x040087f8                mario_002_switch_option_RCAPHAND_000_displaylist_003_RCAPHAND_mesh_tri_1
+                0x04008818                mario_002_switch_option_RCAPHAND_000_displaylist_003_RCAPHAND_mesh_tri_2
+                0x040088b0                mario_002_switch_option_RCAPHAND_000_displaylist_003_RCAPHAND_mesh
+                0x040088f8                mario_002_switch_option_RCAPHAND_000_displaylist_003_RCAPHAND_mesh_mat_override_metal_0
+                0x04008990                mario_000_offset_009_LThigh_mesh_tri_0
+                0x040089e8                mario_000_offset_009_LThigh_mesh
+                0x04008a00                mario_000_offset_009_LThigh_mesh_mat_override_metal_0
+                0x04008a58                mario_000_offset_009_LThigh_skinned_tri_0
+                0x04008a68                mario_000_offset_009_LThigh_skinned
+                0x04008a80                mario_000_offset_009_LThigh_skinned_mat_override_metal_0
+                0x04008ae8                mario_000_offset_010_LLeg_mesh_tri_0
+                0x04008b48                mario_000_offset_010_LLeg_mesh
+                0x04008b60                mario_000_offset_010_LLeg_mesh_mat_override_metal_0
+                0x04008bc8                mario_000_offset_010_LLeg_skinned_tri_0
+                0x04008bd8                mario_000_offset_010_LLeg_skinned
+                0x04008bf0                mario_000_offset_010_LLeg_skinned_mat_override_metal_0
+                0x04008cd8                mario_000_offset_011_LFoot_mesh_tri_0
+                0x04008d40                mario_000_offset_011_LFoot_mesh_tri_1
+                0x04008d80                mario_000_offset_011_LFoot_mesh
+                0x04008da8                mario_000_offset_011_LFoot_mesh_mat_override_metal_0
+                0x04008e20                mario_000_offset_011_LFoot_skinned_tri_0
+                0x04008e30                mario_000_offset_011_LFoot_skinned
+                0x04008e48                mario_000_offset_011_LFoot_skinned_mat_override_metal_0
+                0x04008eb0                mario_000_offset_012_RThigh_mesh_tri_0
+                0x04008f08                mario_000_offset_012_RThigh_mesh
+                0x04008f20                mario_000_offset_012_RThigh_mesh_mat_override_metal_0
+                0x04008f78                mario_000_offset_012_RThigh_skinned_tri_0
+                0x04008f88                mario_000_offset_012_RThigh_skinned
+                0x04008fa0                mario_000_offset_012_RThigh_skinned_mat_override_metal_0
+                0x04009008                mario_000_offset_013_RLeg_mesh_tri_0
+                0x04009068                mario_000_offset_013_RLeg_mesh
+                0x04009080                mario_000_offset_013_RLeg_mesh_mat_override_metal_0
+                0x040090e8                mario_000_offset_013_RLeg_skinned_tri_0
+                0x040090f8                mario_000_offset_013_RLeg_skinned
+                0x04009110                mario_000_offset_013_RLeg_skinned_mat_override_metal_0
+                0x040091f8                mario_000_displaylist_005_RFoot_mesh_tri_0
+                0x04009260                mario_000_displaylist_005_RFoot_mesh_tri_1
+                0x040092a0                mario_000_displaylist_005_RFoot_mesh
+                0x040092c8                mario_000_displaylist_005_RFoot_mesh_mat_override_metal_0
+                0x04009340                mario_000_displaylist_005_RFoot_skinned_tri_0
+                0x04009350                mario_000_displaylist_005_RFoot_skinned
+                0x04009368                mario_000_displaylist_005_RFoot_skinned_mat_override_metal_0
+                0x04009380                mario_material_revert_render_settings
+                0x0400c410                mat_kermit_kermit_skin
+                0x0400c4c0                mat_revert_kermit_kermit_skin
+                0x0400c4d8                mat_kermit_metal
+                0x0400c540                mat_revert_kermit_metal
+                0x0400c558                mat_kermit_kermit_mouth
+                0x0400c5d0                mat_kermit_face_0___Open_Eyes
+                0x0400c648                mat_kermit_wingCombined
+                0x0400c6b0                mat_revert_kermit_wingCombined
+                0x0400c708                kermit_000_offset_bottom_mesh_tri_0
+                0x0400c728                kermit_000_offset_bottom_mesh
+                0x0400c748                kermit_000_offset_bottom_mesh_mat_override_metal_0
+                0x0400cac8                kermit_000_offset_001_Chest_mesh_tri_0
+                0x0400cb68                kermit_000_offset_001_Chest_mesh_tri_1
+                0x0400cc70                kermit_000_offset_001_Chest_mesh
+                0x0400cca8                kermit_000_offset_001_Chest_mesh_mat_override_metal_0
+                0x0400cd40                kermit_000_offset_001_Chest_skinned_tri_0
+                0x0400cd50                kermit_000_offset_001_Chest_skinned
+                0x0400cd68                kermit_000_offset_001_Chest_skinned_mat_override_metal_0
+                0x0400d720                kermit_000_displaylist_Head_mesh_tri_0
+                0x0400da40                kermit_000_displaylist_Head_mesh_tri_1
+                0x0400db08                kermit_000_displaylist_Head_mesh_tri_2
+                0x0400dca0                kermit_000_displaylist_Head_mesh
+                0x0400dce0                kermit_000_displaylist_Head_mesh_mat_override_metal_0
+                0x0400dd20                kermit_000_displaylist_Head_mesh_mat_override_face_0___Open_Eyes_1
+                0x0400dd60                kermit_000_displaylist_Head_mesh_mat_override_face_0___Open_Eyes_2
+                0x0400dda0                kermit_000_displaylist_Head_mesh_mat_override_face_0___Open_Eyes_3
+                0x0400dde0                kermit_000_displaylist_Head_mesh_mat_override_face_0___Open_Eyes_4
+                0x0400de50                kermit_000_displaylist_001_RWing_mesh_tri_0
+                0x0400de68                kermit_000_displaylist_001_RWing_mesh
+                0x0400de88                kermit_000_displaylist_001_RWing_mesh_mat_override_metal_0
+                0x0400ded8                kermit_000_displaylist_002_LWing_mesh_tri_0
+                0x0400def0                kermit_000_displaylist_002_LWing_mesh
+                0x0400df10                kermit_000_displaylist_002_LWing_mesh_mat_override_metal_0
+                0x0400dff0                kermit_000_offset_003_LShoulder_mesh_tri_0
+                0x0400e050                kermit_000_offset_003_LShoulder_mesh_tri_1
+                0x0400e070                kermit_000_offset_003_LShoulder_mesh
+                0x0400e0a8                kermit_000_offset_003_LShoulder_mesh_mat_override_metal_0
+                0x0400e160                kermit_000_offset_003_LShoulder_skinned_tri_0
+                0x0400e170                kermit_000_offset_003_LShoulder_skinned
+                0x0400e188                kermit_000_offset_003_LShoulder_skinned_mat_override_metal_0
+                0x0400e1f0                kermit_000_offset_004_LArm_mesh_tri_0
+                0x0400e250                kermit_000_offset_004_LArm_mesh
+                0x0400e270                kermit_000_offset_004_LArm_mesh_mat_override_metal_0
+                0x0400e2e0                kermit_000_offset_004_LArm_skinned_tri_0
+                0x0400e2f0                kermit_000_offset_004_LArm_skinned
+                0x0400e308                kermit_000_offset_004_LArm_skinned_mat_override_metal_0
+                0x0400e370                kermit_000_offset_005_LHand_mesh_tri_0
+                0x0400e3d0                kermit_000_offset_005_LHand_mesh
+                0x0400e3f0                kermit_000_offset_005_LHand_mesh_mat_override_metal_0
+                0x0400e460                kermit_000_offset_005_LHand_skinned_tri_0
+                0x0400e470                kermit_000_offset_005_LHand_skinned
+                0x0400e488                kermit_000_offset_005_LHand_skinned_mat_override_metal_0
+                0x0400e560                kermit_000_displaylist_003_LHand_mesh_tri_0
+                0x0400e5f8                kermit_000_displaylist_003_LHand_mesh
+                0x0400e618                kermit_000_displaylist_003_LHand_mesh_mat_override_metal_0
+                0x0400e6e8                kermit_000_offset_006_Rshoulder_mesh_tri_0
+                0x0400e748                kermit_000_offset_006_Rshoulder_mesh_tri_1
+                0x0400e768                kermit_000_offset_006_Rshoulder_mesh
+                0x0400e7a0                kermit_000_offset_006_Rshoulder_mesh_mat_override_metal_0
+                0x0400e858                kermit_000_offset_006_Rshoulder_skinned_tri_0
+                0x0400e868                kermit_000_offset_006_Rshoulder_skinned
+                0x0400e880                kermit_000_offset_006_Rshoulder_skinned_mat_override_metal_0
+                0x0400e8e8                kermit_000_offset_007_RArm_mesh_tri_0
+                0x0400e948                kermit_000_offset_007_RArm_mesh
+                0x0400e968                kermit_000_offset_007_RArm_mesh_mat_override_metal_0
+                0x0400e9d8                kermit_000_offset_007_RArm_skinned_tri_0
+                0x0400e9e8                kermit_000_offset_007_RArm_skinned
+                0x0400ea00                kermit_000_offset_007_RArm_skinned_mat_override_metal_0
+                0x0400ea68                kermit_000_offset_008_RHand_mesh_tri_0
+                0x0400eac8                kermit_000_offset_008_RHand_mesh
+                0x0400eae8                kermit_000_offset_008_RHand_mesh_mat_override_metal_0
+                0x0400eb58                kermit_000_offset_008_RHand_skinned_tri_0
+                0x0400eb68                kermit_000_offset_008_RHand_skinned
+                0x0400eb80                kermit_000_offset_008_RHand_skinned_mat_override_metal_0
+                0x0400ec58                kermit_000_displaylist_004_Rhand_mesh_tri_0
+                0x0400ecf0                kermit_000_displaylist_004_Rhand_mesh
+                0x0400ed10                kermit_000_displaylist_004_Rhand_mesh_mat_override_metal_0
+                0x0400ed80                kermit_000_offset_009_LThigh_mesh_tri_0
+                0x0400edd8                kermit_000_offset_009_LThigh_mesh
+                0x0400edf8                kermit_000_offset_009_LThigh_mesh_mat_override_metal_0
+                0x0400ee58                kermit_000_offset_009_LThigh_skinned_tri_0
+                0x0400ee68                kermit_000_offset_009_LThigh_skinned
+                0x0400ee80                kermit_000_offset_009_LThigh_skinned_mat_override_metal_0
+                0x0400eee8                kermit_000_offset_010_LLeg_mesh_tri_0
+                0x0400ef48                kermit_000_offset_010_LLeg_mesh
+                0x0400ef68                kermit_000_offset_010_LLeg_mesh_mat_override_metal_0
+                0x0400efd8                kermit_000_offset_010_LLeg_skinned_tri_0
+                0x0400efe8                kermit_000_offset_010_LLeg_skinned
+                0x0400f000                kermit_000_offset_010_LLeg_skinned_mat_override_metal_0
+                0x0400f0e8                kermit_000_offset_011_LFoot_mesh_tri_0
+                0x0400f150                kermit_000_offset_011_LFoot_mesh_tri_1
+                0x0400f190                kermit_000_offset_011_LFoot_mesh
+                0x0400f1c8                kermit_000_offset_011_LFoot_mesh_mat_override_metal_0
+                0x0400f250                kermit_000_offset_011_LFoot_skinned_tri_0
+                0x0400f260                kermit_000_offset_011_LFoot_skinned
+                0x0400f278                kermit_000_offset_011_LFoot_skinned_mat_override_metal_0
+                0x0400f2e0                kermit_000_offset_012_RThigh_mesh_tri_0
+                0x0400f338                kermit_000_offset_012_RThigh_mesh
+                0x0400f358                kermit_000_offset_012_RThigh_mesh_mat_override_metal_0
+                0x0400f3b8                kermit_000_offset_012_RThigh_skinned_tri_0
+                0x0400f3c8                kermit_000_offset_012_RThigh_skinned
+                0x0400f3e0                kermit_000_offset_012_RThigh_skinned_mat_override_metal_0
+                0x0400f448                kermit_000_offset_013_RLeg_mesh_tri_0
+                0x0400f4a8                kermit_000_offset_013_RLeg_mesh
+                0x0400f4c8                kermit_000_offset_013_RLeg_mesh_mat_override_metal_0
+                0x0400f538                kermit_000_offset_013_RLeg_skinned_tri_0
+                0x0400f548                kermit_000_offset_013_RLeg_skinned
+                0x0400f560                kermit_000_offset_013_RLeg_skinned_mat_override_metal_0
+                0x0400f648                kermit_000_displaylist_005_RFoot_mesh_tri_0
+                0x0400f6b0                kermit_000_displaylist_005_RFoot_mesh_tri_1
+                0x0400f6f0                kermit_000_displaylist_005_RFoot_mesh
+                0x0400f728                kermit_000_displaylist_005_RFoot_mesh_mat_override_metal_0
+                0x0400f7b0                kermit_000_displaylist_005_RFoot_skinned_tri_0
+                0x0400f7c0                kermit_000_displaylist_005_RFoot_skinned
+                0x0400f7d8                kermit_000_displaylist_005_RFoot_skinned_mat_override_metal_0
+                0x0400f7f0                kermit_material_revert_render_settings
+                0x040173a8                mat_peach_2_CorsetNeck_003
+                0x04017420                mat_peach_2_Dress_003
+                0x040174d0                mat_revert_peach_2_Dress_003
+                0x040174e8                mat_peach_2_Many_003
+                0x04017598                mat_revert_peach_2_Many_003
+                0x040175b0                mat_peach_2_metal
+                0x04017618                mat_revert_peach_2_metal
+                0x04017630                mat_peach_2_Pendant_003
+                0x040176a8                mat_peach_2_Face_003
+                0x04017758                mat_revert_peach_2_Face_003
+                0x04017770                mat_peach_2_Earrings_003
+                0x040177b0                mat_peach_2_face_0___eye_open
+                0x04017828                mat_peach_2_mustache
+                0x040178a0                mat_peach_2_sideburns
+                0x04017918                mat_peach_2_hair
+                0x04017950                mat_peach_2_wing_2
+                0x040179b8                mat_revert_peach_2_wing_2
+                0x040179d0                mat_peach_2_wing_1
+                0x04017a38                mat_revert_peach_2_wing_1
+                0x04017a50                mat_peach_2_gloves
+                0x04017a88                mat_peach_2_cap
+                0x04017b00                mat_peach_2_HeelsLegs_003
+                0x040181e8                peach_2_000_offset_mesh_tri_0
+                0x04018250                peach_2_000_offset_mesh_tri_1
+                0x04018400                peach_2_000_offset_mesh_tri_2
+                0x04018478                peach_2_000_offset_mesh
+                0x040184c0                peach_2_000_offset_mesh_mat_override_metal_0
+                0x04018948                peach_2_000_offset_001_mesh_tri_0
+                0x040189b0                peach_2_000_offset_001_mesh_tri_1
+                0x04018a10                peach_2_000_offset_001_mesh_tri_2
+                0x04018ae8                peach_2_000_offset_001_mesh_tri_3
+                0x04018b18                peach_2_000_offset_001_mesh
+                0x04018b68                peach_2_000_offset_001_mesh_mat_override_metal_0
+                0x04018c58                peach_2_000_offset_001_skinned_tri_0
+                0x04018c68                peach_2_000_offset_001_skinned
+                0x04018c80                peach_2_000_offset_001_skinned_mat_override_metal_0
+                0x04019748                peach_2_000_displaylist_mesh_tri_0
+                0x040197d8                peach_2_000_displaylist_mesh_tri_1
+                0x04019c08                peach_2_000_displaylist_mesh_tri_2
+                0x04019cc0                peach_2_000_displaylist_mesh
+                0x04019d08                peach_2_000_displaylist_mesh_mat_override_metal_0
+                0x04019d50                peach_2_000_displaylist_mesh_mat_override_Face_003_1
+                0x04019d98                peach_2_000_displaylist_mesh_mat_override_face_0___eye_open_2
+                0x0401aca8                peach_2_002_switch_option_head__no_cap__mesh_tri_0
+                0x0401afa0                peach_2_002_switch_option_head__no_cap__mesh_tri_1
+                0x0401b058                peach_2_002_switch_option_head__no_cap__mesh_tri_2
+                0x0401b0a8                peach_2_002_switch_option_head__no_cap__mesh_tri_3
+                0x0401b390                peach_2_002_switch_option_head__no_cap__mesh
+                0x0401b3d8                peach_2_002_switch_option_head__no_cap__mesh_mat_override_metal_0
+                0x0401b420                peach_2_002_switch_option_head__no_cap__mesh_mat_override_Face_003_1
+                0x0401b4e8                peach_2_000_displaylist_001_mesh_tri_0
+                0x0401b508                peach_2_000_displaylist_001_mesh_tri_1
+                0x0401b528                peach_2_000_displaylist_001_mesh
+                0x0401b560                peach_2_000_displaylist_001_mesh_mat_override_metal_0
+                0x0401b618                peach_2_000_displaylist_002_mesh_tri_0
+                0x0401b638                peach_2_000_displaylist_002_mesh_tri_1
+                0x0401b658                peach_2_000_displaylist_002_mesh
+                0x0401b690                peach_2_000_displaylist_002_mesh_mat_override_metal_0
+                0x0401b888                peach_2_000_offset_003_mesh_tri_0
+                0x0401b980                peach_2_000_offset_003_mesh
+                0x0401b9a0                peach_2_000_offset_003_mesh_mat_override_metal_0
+                0x0401ba80                peach_2_000_offset_004_mesh_tri_0
+                0x0401bad0                peach_2_000_offset_004_mesh_tri_1
+                0x0401bb20                peach_2_000_offset_004_mesh
+                0x0401bb58                peach_2_000_offset_004_mesh_mat_override_metal_0
+                0x0401bbd0                peach_2_000_offset_004_skinned_tri_0
+                0x0401bbe0                peach_2_000_offset_004_skinned
+                0x0401bbf8                peach_2_000_offset_004_skinned_mat_override_metal_0
+                0x0401bdd0                peach_2_000_displaylist_003_mesh_tri_0
+                0x0401be20                peach_2_000_displaylist_003_mesh_tri_1
+                0x0401bf18                peach_2_000_displaylist_003_mesh
+                0x0401bf50                peach_2_000_displaylist_003_mesh_mat_override_metal_0
+                0x0401bfc8                peach_2_000_displaylist_003_skinned_tri_0
+                0x0401bfd8                peach_2_000_displaylist_003_skinned
+                0x0401bff0                peach_2_000_displaylist_003_skinned_mat_override_metal_0
+                0x0401c3a8                peach_2_002_switch_option_right_hand_open_mesh_tri_0
+                0x0401c5d0                peach_2_002_switch_option_right_hand_open_mesh
+                0x0401c5e8                peach_2_002_switch_option_right_hand_open_mesh_mat_override_metal_0
+                0x0401c7c0                peach_2_000_offset_006_mesh_tri_0
+                0x0401c8b8                peach_2_000_offset_006_mesh
+                0x0401c8d8                peach_2_000_offset_006_mesh_mat_override_metal_0
+                0x0401c9b8                peach_2_000_offset_007_mesh_tri_0
+                0x0401ca08                peach_2_000_offset_007_mesh_tri_1
+                0x0401ca58                peach_2_000_offset_007_mesh
+                0x0401ca90                peach_2_000_offset_007_mesh_mat_override_metal_0
+                0x0401cb18                peach_2_000_offset_007_skinned_tri_0
+                0x0401cb28                peach_2_000_offset_007_skinned
+                0x0401cb40                peach_2_000_offset_007_skinned_mat_override_metal_0
+                0x0401cce8                peach_2_000_displaylist_004_mesh_tri_0
+                0x0401cd38                peach_2_000_displaylist_004_mesh_tri_1
+                0x0401ce30                peach_2_000_displaylist_004_mesh
+                0x0401ce68                peach_2_000_displaylist_004_mesh_mat_override_metal_0
+                0x0401cee0                peach_2_000_displaylist_004_skinned_tri_0
+                0x0401cef0                peach_2_000_displaylist_004_skinned
+                0x0401cf08                peach_2_000_displaylist_004_skinned_mat_override_metal_0
+                0x0401d2b0                peach_2_002_switch_option_left_hand_open_mesh_tri_0
+                0x0401d4d8                peach_2_002_switch_option_left_hand_open_mesh
+                0x0401d4f0                peach_2_002_switch_option_left_hand_open_mesh_mat_override_metal_0
+                0x0401d998                peach_2_004_switch_option_left_hand_peace_mesh_tri_0
+                0x0401dc18                peach_2_004_switch_option_left_hand_peace_mesh
+                0x0401dc30                peach_2_004_switch_option_left_hand_peace_mesh_mat_override_metal_0
+                0x0401e238                peach_2_005_switch_option_left_hand_cap_mesh_tri_0
+                0x0401e400                peach_2_005_switch_option_left_hand_cap_mesh_tri_1
+                0x0401e590                peach_2_005_switch_option_left_hand_cap_mesh
+                0x0401e5b8                peach_2_005_switch_option_left_hand_cap_mesh_mat_override_metal_0
+                0x0401ebd0                peach_2_006_switch_option_left_hand_wing_cap_mesh_tri_0
+                0x0401ed98                peach_2_006_switch_option_left_hand_wing_cap_mesh_tri_1
+                0x0401ef28                peach_2_006_switch_option_left_hand_wing_cap_mesh
+                0x0401ef50                peach_2_006_switch_option_left_hand_wing_cap_mesh_mat_override_metal_0
+                0x0401f078                peach_2_006_switch_option_left_hand_wing_cap_wings_mesh_tri_0
+                0x0401f0a8                peach_2_006_switch_option_left_hand_wing_cap_wings_mesh_tri_1
+                0x0401f0d8                peach_2_006_switch_option_left_hand_wing_cap_wings_mesh
+                0x0401f110                peach_2_006_switch_option_left_hand_wing_cap_wings_mesh_mat_override_metal_0
+                0x0401f268                peach_2_000_offset_010_mesh_tri_0
+                0x0401f2c0                peach_2_000_offset_010_mesh
+                0x0401f2e0                peach_2_000_offset_010_mesh_mat_override_metal_0
+                0x0401f460                peach_2_000_offset_011_mesh_tri_0
+                0x0401f508                peach_2_000_offset_011_mesh
+                0x0401f520                peach_2_000_offset_011_mesh_mat_override_metal_0
+                0x0401f658                peach_2_000_offset_013_mesh_tri_0
+                0x0401f6b0                peach_2_000_offset_013_mesh
+                0x0401f6d0                peach_2_000_offset_013_mesh_mat_override_metal_0
+                0x0401f880                peach_2_000_displaylist_005_mesh_tri_0
+                0x0401f928                peach_2_000_displaylist_005_mesh
+                0x0401f940                peach_2_000_displaylist_005_mesh_mat_override_metal_0
+                0x0401f958                peach_2_material_revert_render_settings
+                0x04028318                mat_imbie_dark_leather
+                0x04028390                mat_imbie_Undershirt
+                0x04028408                mat_imbie_hatband
+                0x04028440                mat_imbie_khaki
+                0x040284c8                mat_revert_imbie_khaki
+                0x040284e0                mat_imbie_brass
+                0x04028548                mat_revert_imbie_brass
+                0x04028560                mat_imbie_metal
+                0x040285c8                mat_revert_imbie_metal
+                0x040285e0                mat_imbie_face_0___eye_open
+                0x04028658                mat_imbie_mustache
+                0x040286d0                mat_imbie_hair
+                0x04028708                mat_imbie_sideburns
+                0x04028780                mat_imbie_hat
+                0x040287b8                mat_imbie_face_1___eye_half
+                0x04028830                mat_imbie_face_2___eye_closed
+                0x040288a8                mat_imbie_face_7___eye_X
+                0x04028920                mat_imbie_wing_2
+                0x040289a0                mat_revert_imbie_wing_2
+                0x040289b8                mat_imbie_wing_1
+                0x04028a38                mat_revert_imbie_wing_1
+                0x04028a50                mat_imbie_gloves
+                0x04028a88                mat_imbie_cap
+                0x040290d0                imbie_000_offset_mesh_tri_0
+                0x04029220                imbie_000_offset_mesh_tri_1
+                0x04029260                imbie_000_offset_mesh_tri_2
+                0x040292a0                imbie_000_offset_mesh_tri_3
+                0x040292f0                imbie_000_offset_mesh_tri_4
+                0x04029390                imbie_000_offset_mesh
+                0x040293f8                imbie_000_offset_mesh_mat_override_metal_0
+                0x04029ca0                imbie_000_offset_001_mesh_tri_0
+                0x04029da0                imbie_000_offset_001_mesh_tri_1
+                0x04029df0                imbie_000_offset_001_mesh_tri_2
+                0x04029fe0                imbie_000_offset_001_mesh_tri_3
+                0x0402a0f0                imbie_000_offset_001_mesh
+                0x0402a138                imbie_000_offset_001_mesh_mat_override_metal_0
+                0x0402a260                imbie_000_offset_001_skinned_tri_0
+                0x0402a270                imbie_000_offset_001_skinned_tri_1
+                0x0402a280                imbie_000_offset_001_skinned
+                0x0402a2a8                imbie_000_offset_001_skinned_mat_override_metal_0
+                0x0402b6f0                imbie_000_displaylist_mesh_tri_0
+                0x0402ba30                imbie_000_displaylist_mesh_tri_1
+                0x0402bae8                imbie_000_displaylist_mesh_tri_2
+                0x0402bc18                imbie_000_displaylist_mesh_tri_3
+                0x0402bc88                imbie_000_displaylist_mesh_tri_4
+                0x0402bfc0                imbie_000_displaylist_mesh_tri_5
+                0x0402c068                imbie_000_displaylist_mesh
+                0x0402c0d0                imbie_000_displaylist_mesh_mat_override_metal_0
+                0x0402c138                imbie_000_displaylist_mesh_mat_override_face_1___eye_half_1
+                0x0402c1a0                imbie_000_displaylist_mesh_mat_override_face_2___eye_closed_2
+                0x0402c208                imbie_000_displaylist_mesh_mat_override_face_7___eye_X_3
+                0x0402d140                imbie_002_switch_option_head__no_cap__mesh_tri_0
+                0x0402d438                imbie_002_switch_option_head__no_cap__mesh_tri_1
+                0x0402d4f0                imbie_002_switch_option_head__no_cap__mesh_tri_2
+                0x0402d540                imbie_002_switch_option_head__no_cap__mesh_tri_3
+                0x0402d828                imbie_002_switch_option_head__no_cap__mesh
+                0x0402d870                imbie_002_switch_option_head__no_cap__mesh_mat_override_metal_0
+                0x0402d8b8                imbie_002_switch_option_head__no_cap__mesh_mat_override_face_1___eye_half_1
+                0x0402d900                imbie_002_switch_option_head__no_cap__mesh_mat_override_face_2___eye_closed_2
+                0x0402d948                imbie_002_switch_option_head__no_cap__mesh_mat_override_face_7___eye_X_3
+                0x0402da10                imbie_000_displaylist_001_mesh_tri_0
+                0x0402da30                imbie_000_displaylist_001_mesh_tri_1
+                0x0402da50                imbie_000_displaylist_001_mesh
+                0x0402da88                imbie_000_displaylist_001_mesh_mat_override_metal_0
+                0x0402db40                imbie_000_displaylist_002_mesh_tri_0
+                0x0402db60                imbie_000_displaylist_002_mesh_tri_1
+                0x0402db80                imbie_000_displaylist_002_mesh
+                0x0402dbb8                imbie_000_displaylist_002_mesh_mat_override_metal_0
+                0x0402dda0                imbie_000_offset_003_mesh_tri_0
+                0x0402de30                imbie_000_offset_003_mesh
+                0x0402de48                imbie_000_offset_003_mesh_mat_override_metal_0
+                0x0402e040                imbie_000_offset_004_mesh_tri_0
+                0x0402e0d8                imbie_000_offset_004_mesh_tri_1
+                0x0402e130                imbie_000_offset_004_mesh
+                0x0402e158                imbie_000_offset_004_mesh_mat_override_metal_0
+                0x0402e240                imbie_000_offset_004_skinned_tri_0
+                0x0402e250                imbie_000_offset_004_skinned
+                0x0402e268                imbie_000_offset_004_skinned_mat_override_metal_0
+                0x0402e540                imbie_000_displaylist_003_mesh_tri_0
+                0x0402e6d0                imbie_000_displaylist_003_mesh
+                0x0402e6e8                imbie_000_displaylist_003_mesh_mat_override_metal_0
+                0x0402ea80                imbie_002_switch_option_right_hand_open_mesh_tri_0
+                0x0402eca8                imbie_002_switch_option_right_hand_open_mesh
+                0x0402ecc0                imbie_002_switch_option_right_hand_open_mesh_mat_override_metal_0
+                0x0402eef8                imbie_000_offset_006_mesh_tri_0
+                0x0402efb8                imbie_000_offset_006_mesh
+                0x0402efd0                imbie_000_offset_006_mesh_mat_override_metal_0
+                0x0402f138                imbie_000_offset_007_mesh_tri_0
+                0x0402f1b8                imbie_000_offset_007_mesh_tri_1
+                0x0402f1f8                imbie_000_offset_007_mesh
+                0x0402f220                imbie_000_offset_007_mesh_mat_override_metal_0
+                0x0402f2f8                imbie_000_offset_007_skinned_tri_0
+                0x0402f308                imbie_000_offset_007_skinned
+                0x0402f320                imbie_000_offset_007_skinned_mat_override_metal_0
+                0x0402f5e8                imbie_000_displaylist_004_mesh_tri_0
+                0x0402f778                imbie_000_displaylist_004_mesh
+                0x0402f790                imbie_000_displaylist_004_mesh_mat_override_metal_0
+                0x0402fb68                imbie_002_switch_option_left_hand_open_mesh_tri_0
+                0x0402fd90                imbie_002_switch_option_left_hand_open_mesh
+                0x0402fda8                imbie_002_switch_option_left_hand_open_mesh_mat_override_metal_0
+                0x040301b0                imbie_004_switch_option_left_hand_peace_mesh_tri_0
+                0x04030428                imbie_004_switch_option_left_hand_peace_mesh
+                0x04030440                imbie_004_switch_option_left_hand_peace_mesh_mat_override_metal_0
+                0x04030ae8                imbie_005_switch_option_left_hand_cap_mesh_tri_0
+                0x04030cb0                imbie_005_switch_option_left_hand_cap_mesh_tri_1
+                0x04030e40                imbie_005_switch_option_left_hand_cap_mesh
+                0x04030e68                imbie_005_switch_option_left_hand_cap_mesh_mat_override_metal_0
+                0x04031520                imbie_006_switch_option_left_hand_wing_cap_mesh_tri_0
+                0x040316e8                imbie_006_switch_option_left_hand_wing_cap_mesh_tri_1
+                0x04031878                imbie_006_switch_option_left_hand_wing_cap_mesh
+                0x040318a0                imbie_006_switch_option_left_hand_wing_cap_mesh_mat_override_metal_0
+                0x040319c8                imbie_006_switch_option_left_hand_wing_cap_wings_mesh_tri_0
+                0x040319f8                imbie_006_switch_option_left_hand_wing_cap_wings_mesh_tri_1
+                0x04031a28                imbie_006_switch_option_left_hand_wing_cap_wings_mesh
+                0x04031a60                imbie_006_switch_option_left_hand_wing_cap_wings_mesh_mat_override_metal_0
+                0x04031c68                imbie_000_offset_009_mesh_tri_0
+                0x04031d10                imbie_000_offset_009_mesh
+                0x04031d30                imbie_000_offset_009_mesh_mat_override_metal_0
+                0x04031f50                imbie_000_offset_010_mesh_tri_0
+                0x04031fd0                imbie_000_offset_010_mesh_tri_1
+                0x04032038                imbie_000_offset_010_mesh
+                0x04032070                imbie_000_offset_010_mesh_mat_override_metal_0
+                0x04032158                imbie_000_offset_010_skinned_tri_0
+                0x04032168                imbie_000_offset_010_skinned
+                0x04032180                imbie_000_offset_010_skinned_mat_override_metal_0
+                0x04032288                imbie_000_offset_011_mesh_tri_0
+                0x04032368                imbie_000_offset_011_mesh
+                0x04032380                imbie_000_offset_011_mesh_mat_override_metal_0
+                0x04032578                imbie_000_offset_012_mesh_tri_0
+                0x04032618                imbie_000_offset_012_mesh
+                0x04032638                imbie_000_offset_012_mesh_mat_override_metal_0
+                0x04032808                imbie_000_offset_013_mesh_tri_0
+                0x040328b8                imbie_000_offset_013_mesh_tri_1
+                0x04032908                imbie_000_offset_013_mesh
+                0x04032940                imbie_000_offset_013_mesh_mat_override_metal_0
+                0x04032a58                imbie_000_offset_013_skinned_tri_0
+                0x04032a68                imbie_000_offset_013_skinned
+                0x04032a80                imbie_000_offset_013_skinned_mat_override_metal_0
+                0x04032b88                imbie_000_displaylist_005_mesh_tri_0
+                0x04032c68                imbie_000_displaylist_005_mesh
+                0x04032c80                imbie_000_displaylist_005_mesh_mat_override_metal_0
+                0x04032c98                imbie_material_revert_render_settings
+                0x0403a598                mat_kappa_Shell
+                0x0403a610                mat_kappa_Shoes
+                0x0403a688                mat_kappa_Stomach
+                0x0403a700                mat_kappa_metal
+                0x0403a768                mat_revert_kappa_metal
+                0x0403a780                mat_kappa_Skin
+                0x0403a7f8                mat_kappa_Eyes
+                0x0403a870                mat_kappa_face_1___eye_half
+                0x0403a8e8                mat_kappa_face_2___eye_closed
+                0x0403a960                mat_kappa_face_7___eye_X
+                0x0403a9d8                mat_kappa_wing_2
+                0x0403aa40                mat_revert_kappa_wing_2
+                0x0403aa58                mat_kappa_wing_1
+                0x0403aac0                mat_revert_kappa_wing_1
+                0x0403aeb8                kappa_000_offset_001_mesh_tri_0
+                0x0403af38                kappa_000_offset_001_mesh_tri_1
+                0x0403b068                kappa_000_offset_001_mesh_tri_2
+                0x0403b0f8                kappa_000_offset_001_mesh
+                0x0403b130                kappa_000_offset_001_mesh_mat_override_metal_0
+                0x0403b928                kappa_000_displaylist_mesh_tri_0
+                0x0403bc68                kappa_000_displaylist_mesh_tri_1
+                0x0403bcb0                kappa_000_displaylist_mesh
+                0x0403bcd8                kappa_000_displaylist_mesh_mat_override_metal_0
+                0x0403bd00                kappa_000_displaylist_mesh_mat_override_face_1___eye_half_1
+                0x0403bd28                kappa_000_displaylist_mesh_mat_override_face_2___eye_closed_2
+                0x0403bd50                kappa_000_displaylist_mesh_mat_override_face_7___eye_X_3
+                0x0403c538                kappa_002_switch_option_head__no_cap__mesh_tri_0
+                0x0403c878                kappa_002_switch_option_head__no_cap__mesh_tri_1
+                0x0403c8c0                kappa_002_switch_option_head__no_cap__mesh
+                0x0403c8e8                kappa_002_switch_option_head__no_cap__mesh_mat_override_metal_0
+                0x0403c910                kappa_002_switch_option_head__no_cap__mesh_mat_override_face_1___eye_half_1
+                0x0403c938                kappa_002_switch_option_head__no_cap__mesh_mat_override_face_2___eye_closed_2
+                0x0403c960                kappa_002_switch_option_head__no_cap__mesh_mat_override_face_7___eye_X_3
+                0x0403ca08                kappa_000_displaylist_001_mesh_tri_0
+                0x0403ca28                kappa_000_displaylist_001_mesh_tri_1
+                0x0403ca48                kappa_000_displaylist_001_mesh
+                0x0403ca80                kappa_000_displaylist_001_mesh_mat_override_metal_0
+                0x0403cb38                kappa_000_displaylist_002_mesh_tri_0
+                0x0403cb58                kappa_000_displaylist_002_mesh_tri_1
+                0x0403cb78                kappa_000_displaylist_002_mesh
+                0x0403cbb0                kappa_000_displaylist_002_mesh_mat_override_metal_0
+                0x0403cd88                kappa_000_offset_003_mesh_tri_0
+                0x0403cec0                kappa_000_offset_003_mesh
+                0x0403ced8                kappa_000_offset_003_mesh_mat_override_metal_0
+                0x0403d0a0                kappa_000_offset_004_mesh_tri_0
+                0x0403d1d8                kappa_000_offset_004_mesh
+                0x0403d1f0                kappa_000_offset_004_mesh_mat_override_metal_0
+                0x0403d3f8                kappa_000_displaylist_003_mesh_tri_0
+                0x0403d550                kappa_000_displaylist_003_mesh
+                0x0403d568                kappa_000_displaylist_003_mesh_mat_override_metal_0
+                0x0403d770                kappa_002_switch_option_right_hand_open_mesh_tri_0
+                0x0403d8c8                kappa_002_switch_option_right_hand_open_mesh
+                0x0403d8e0                kappa_002_switch_option_right_hand_open_mesh_mat_override_metal_0
+                0x0403dac8                kappa_000_offset_006_mesh_tri_0
+                0x0403dc00                kappa_000_offset_006_mesh
+                0x0403dc18                kappa_000_offset_006_mesh_mat_override_metal_0
+                0x0403de20                kappa_000_offset_007_mesh_tri_0
+                0x0403df58                kappa_000_offset_007_mesh
+                0x0403df70                kappa_000_offset_007_mesh_mat_override_metal_0
+                0x0403e188                kappa_000_displaylist_004_mesh_tri_0
+                0x0403e2e0                kappa_000_displaylist_004_mesh
+                0x0403e2f8                kappa_000_displaylist_004_mesh_mat_override_metal_0
+                0x0403e510                kappa_002_switch_option_left_hand_open_mesh_tri_0
+                0x0403e668                kappa_002_switch_option_left_hand_open_mesh
+                0x0403e680                kappa_002_switch_option_left_hand_open_mesh_mat_override_metal_0
+                0x0403e898                kappa_004_switch_option_left_hand_peace_mesh_tri_0
+                0x0403e9f0                kappa_004_switch_option_left_hand_peace_mesh
+                0x0403ea08                kappa_004_switch_option_left_hand_peace_mesh_mat_override_metal_0
+                0x0403ec20                kappa_005_switch_option_left_hand_cap_mesh_tri_0
+                0x0403ed78                kappa_005_switch_option_left_hand_cap_mesh
+                0x0403ed90                kappa_005_switch_option_left_hand_cap_mesh_mat_override_metal_0
+                0x0403efa8                kappa_006_switch_option_left_hand_wing_cap_mesh_tri_0
+                0x0403f0d0                kappa_006_switch_option_left_hand_wing_cap_mesh
+                0x0403f0e8                kappa_006_switch_option_left_hand_wing_cap_mesh_mat_override_metal_0
+                0x0403f110                kappa_006_switch_option_left_hand_wing_cap_wings_mesh_tri_0
+                0x0403f150                kappa_006_switch_option_left_hand_wing_cap_wings_mesh
+                0x0403f168                kappa_006_switch_option_left_hand_wing_cap_wings_mesh_mat_override_metal_0
+                0x0403f1e0                kappa_006_switch_option_left_hand_wing_cap_wings_skinned_tri_0
+                0x0403f1f0                kappa_006_switch_option_left_hand_wing_cap_wings_skinned
+                0x0403f208                kappa_006_switch_option_left_hand_wing_cap_wings_skinned_mat_override_metal_0
+                0x0403f400                kappa_000_offset_009_mesh_tri_0
+                0x0403f538                kappa_000_offset_009_mesh
+                0x0403f550                kappa_000_offset_009_mesh_mat_override_metal_0
+                0x0403f728                kappa_000_offset_010_mesh_tri_0
+                0x0403f840                kappa_000_offset_010_mesh
+                0x0403f858                kappa_000_offset_010_mesh_mat_override_metal_0
+                0x0403fb30                kappa_000_offset_011_mesh_tri_0
+                0x0403fc70                kappa_000_offset_011_mesh
+                0x0403fc88                kappa_000_offset_011_mesh_mat_override_metal_0
+                0x0403fe10                kappa_000_offset_012_mesh_tri_0
+                0x0403ff28                kappa_000_offset_012_mesh
+                0x0403ff40                kappa_000_offset_012_mesh_mat_override_metal_0
+                0x040400e8                kappa_000_offset_013_mesh_tri_0
+                0x04040200                kappa_000_offset_013_mesh
+                0x04040218                kappa_000_offset_013_mesh_mat_override_metal_0
+                0x040404f0                kappa_000_displaylist_005_mesh_tri_0
+                0x04040630                kappa_000_displaylist_005_mesh
+                0x04040648                kappa_000_displaylist_005_mesh_mat_override_metal_0
+                0x04040660                kappa_material_revert_render_settings
+                0x04042328                thwomp_seg5_dl_0500B570
+                0x040424d0                thwomp_seg5_dl_0500B718
+                0x04042508                thwomp_seg5_dl_0500B750
+                0x04042588                thwomp_seg5_collision_0500B7D0
+                0x040426e4                thwomp_seg5_collision_0500B92C
+                0x04043880                bubble_seg4_dl_0401DD60
+                0x04043900                bubble_seg4_dl_0401DDE0
+                0x040471c0                smoke_seg4_dl_040216A0
+                0x04047238                smoke_seg4_dl_04021718
+                0x04047250                smoke_seg4_dl_04021730
+                0x04047268                smoke_seg4_dl_04021748
+                0x04047280                smoke_seg4_dl_04021760
+                0x04047298                smoke_seg4_dl_04021778
+                0x040472b0                smoke_seg4_dl_04021790
+                0x040472c8                smoke_seg4_dl_040217A8
+                0x04047b20                burn_smoke_seg4_dl_04022000
+                0x04047b48                burn_smoke_seg4_dl_04022028
+                0x04047b68                burn_smoke_seg4_dl_04022048
+                0x04047b90                burn_smoke_seg4_dl_04022070
+                0x0404ac68                stomp_smoke_seg4_dl_04025148
+                0x0404acb0                stomp_smoke_seg4_dl_04025190
+                0x0404ace8                stomp_smoke_seg4_dl_040251C8
+                0x0404ad00                stomp_smoke_seg4_dl_040251E0
+                0x0404ad18                stomp_smoke_seg4_dl_040251F8
+                0x0404ad30                stomp_smoke_seg4_dl_04025210
+                0x0404ad48                stomp_smoke_seg4_dl_04025228
+                0x0404ad60                stomp_smoke_seg4_dl_04025240
+                0x0404ad78                stomp_smoke_seg4_dl_04025258
+                0x0404ad90                stomp_smoke_seg4_dl_04025270
+                0x0404ada8                stomp_smoke_seg4_dl_04025288
+                0x0404adc0                stomp_smoke_seg4_dl_040252A0
+                0x0404add8                stomp_smoke_seg4_dl_040252B8
+                0x0404adf0                stomp_smoke_seg4_dl_040252D0
+                0x0404ae08                stomp_smoke_seg4_dl_040252E8
+                0x0404ae20                stomp_smoke_seg4_dl_04025300
+                0x0404ce78                water_wave_seg4_dl_04027358
+                0x0404cec0                water_wave_seg4_dl_040273A0
+                0x0404cef8                water_wave_seg4_dl_040273D8
+                0x0404cf10                water_wave_seg4_dl_040273F0
+                0x0404cf28                water_wave_seg4_dl_04027408
+                0x0404cf40                water_wave_seg4_dl_04027420
+                0x0404cf58                water_wave_seg4_dl_04027438
+                0x0404ffb0                sparkles_seg4_dl_0402A490
+                0x04050018                sparkles_seg4_dl_0402A4F8
+                0x04050030                sparkles_seg4_dl_0402A510
+                0x04050048                sparkles_seg4_dl_0402A528
+                0x04050060                sparkles_seg4_dl_0402A540
+                0x04050078                sparkles_seg4_dl_0402A558
+                0x04050090                sparkles_seg4_dl_0402A570
+                0x040580e8                water_splash_seg4_dl_040325C8
+                0x04058160                water_splash_seg4_dl_04032640
+                0x04058178                water_splash_seg4_dl_04032658
+                0x04058190                water_splash_seg4_dl_04032670
+                0x040581a8                water_splash_seg4_dl_04032688
+                0x040581c0                water_splash_seg4_dl_040326A0
+                0x040581d8                water_splash_seg4_dl_040326B8
+                0x040581f0                water_splash_seg4_dl_040326D0
+                0x04058208                water_splash_seg4_dl_040326E8
+                0x040584a0                white_particle_small_dl_begin
+                0x04058500                white_particle_small_dl_end
+                0x04058538                white_particle_small_dl
+                0x04058550                white_particle_small_unused_dl
+                0x0405ada8                sparkles_animation_seg4_dl_04035288
+                0x0405ae20                sparkles_animation_seg4_dl_04035300
+                0x0405ae38                sparkles_animation_seg4_dl_04035318
+                0x0405ae50                sparkles_animation_seg4_dl_04035330
+                0x0405ae68                sparkles_animation_seg4_dl_04035348
+                0x0405ae80                sparkles_animation_seg4_dl_04035360
+                0x0405b510                peniswish
+
+.data1
+ *(.data1)
+                0x0405b520                        . = .
+                0x04063510                        _gp = (ALIGN (0x10) + 0x7ff0)
+
+.got
+ *(.got)
+
+.sdata
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+
+.lit8
+ *(.lit8)
+
+.lit4
+ *(.lit4)
+                0x0405b520                        _edata = .
+                [!provide]                        PROVIDE (edata = .)
+                0x0405b520                        . = ALIGN (ALIGNOF (NEXT_SECTION))
+                0x0405b520                        __bss_start = .
+                0x0405b520                        _fbss = .
+
+.sbss
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ *(.scommon)
+
+.bss            0x0405b520        0x0
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ *(COMMON)
+                0x0405b520                        . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x0405b520                        . = ALIGN (0x4)
+                0x0405b520                        . = SEGMENT_START ("ldata-segment", .)
+                0x0405b520                        . = ALIGN (0x4)
+                0x0405b520                        _end = .
+                [!provide]                        PROVIDE (end = .)
+                0x0405b520                        . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.options        0x00000000       0x20
+ .options       0x00000000       0x20 build/us/actors/group0.o
+
+.gnu.build.attributes
+ *(.gnu.build.attributes .gnu.build.attributes.*)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line .debug_line.* .debug_line_end)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_addr
+ *(.debug_addr)
+
+.debug_line_str
+ *(.debug_line_str)
+
+.debug_loclists
+ *(.debug_loclists)
+
+.debug_macro
+ *(.debug_macro)
+
+.debug_names
+ *(.debug_names)
+
+.debug_rnglists
+ *(.debug_rnglists)
+
+.debug_str_offsets
+ *(.debug_str_offsets)
+
+.debug_sup
+ *(.debug_sup)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+.gptab.sdata    0x0405b520      0x338
+ *(.gptab.data)
+ .gptab.data    0x0405b520      0x338 build/us/actors/group0.o
+ *(.gptab.sdata)
+
+.gptab.sbss
+ *(.gptab.bss)
+ *(.gptab.sbss)
+
+.mdebug.abi32
+ *(.mdebug.abi32)
+
+.mdebug.abiN32
+ *(.mdebug.abiN32)
+
+.mdebug.abi64
+ *(.mdebug.abi64)
+
+.mdebug.abiO64
+ *(.mdebug.abiO64)
+
+.mdebug.eabi32
+ *(.mdebug.eabi32)
+
+.mdebug.eabi64
+ *(.mdebug.eabi64)
+
+.gcc_compiled_long32
+ *(.gcc_compiled_long32)
+
+.gcc_compiled_long64
+ *(.gcc_compiled_long64)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+ *(.gnu_object_only)
+OUTPUT(build/us/actors/group0.elf elf32-tradbigmips)
+
+.mdebug         0x00000000    0x217c4
+ .mdebug        0x00000000    0x260b8 build/us/actors/group0.o
