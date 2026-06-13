@@ -18,7 +18,7 @@
 
 DEFINE_DIALOG(DIALOG_000, 1, 6, 40, 200, _("\
 gng. You're smack in the\n\
-middle of the Gaza.\n\
+middle of Gaza.\n\
 You'll find the David\n\
 Stars that Bowser stole\n\
 inside the painting\n\
@@ -36,12 +36,12 @@ can talk to some other\n\
 characters by facing them\n\
 and pressing [B]."))
 
-DEFINE_DIALOG(DIALOG_001, 1, 4, 120, 200, _("\
+DEFINE_DIALOG(DIALOG_001, 1, 4, 140, 200, _("\
 Watch out my nigga. If you mosey\n\
 around here, you're finna be liable\n\
 to be deatomized by a\n\
 water bomb!\n\
-Those enemy palestinians love\n\
+Those enemy Palestinians love\n\
 to complain, and they're\n\
 always finding ways to\n\
 fight back.\n\
@@ -56,6 +56,8 @@ to find the Big Net.\n\
 Please come back to see\n\
 me after you've retrieved\n\
 the Star of David!\n\
+We can tap hella cyphs\n\
+when you return fella.\n\
 best of luck twin.\n\
 May the Cyphs be with you."))
 
@@ -65,7 +67,7 @@ ahead, so listen up! Take\n\
 my advice.\n\
 \n\
 Cross those two\n\
-shitty ass bridges ahead, then\n\
+rickety ass bridges ahead, then\n\
 watch for falling\n\
 Palestinian artillery.\n\
 The Big Net at the\n\
@@ -78,7 +80,7 @@ You can talk to us\n\
 whenever you'd like to!\n\
 May the Cyphs be with you."))
 
-DEFINE_DIALOG(DIALOG_003, 1, 5, 130, 200, _("\
+DEFINE_DIALOG(DIALOG_003, 1, 5, 150, 200, _("\
 THANK YOU BROOO! The Big\n\
 Net is nothing but a\n\
 big bitch now! But the\n\
@@ -106,16 +108,16 @@ We'll prepare all of the\n\
 booty blasters in this course for\n\
 you to use. Arrividerci!"))
 
-DEFINE_DIALOG(DIALOG_005, 1, 3, 65, 200, _("\
+DEFINE_DIALOG(DIALOG_005, 1, 3, 80, 200, _("\
 Hey, Mario! Is it true\n\
 that you beat the Big\n\
-Net? Cool!\n\
+Net? That's fire!\n\
 You must be strong. And\n\
 pretty fast. So, how fast\n\
 are you, anyway?\n\
 The only one fast\n\
-enough is the A-Train\n\
-You know you can't\n\
+enough is the A-Train,\n\
+and you know you can't\n\
 stop the A-Train baby...\n\
 Think ur fast enough to beat me..?\n\
 Koopa the Candid R.? I don't\n\
@@ -141,53 +143,54 @@ real."))
 DEFINE_DIALOG(DIALOG_007, 1, 5, 30, 200, _("\
 Hufff...fff...pufff...\n\
 Whoa! You...really...are...\n\
-fast! A human blur!\n\
+fast! A quick ahh nigga!\n\
 Here you go--you've won\n\
 it, fair and square!"))
 
 DEFINE_DIALOG(DIALOG_008, 1, 4, 40, 200, _("\
 BEWARE OF CHAIN CHOMP\n\
-Extreme Danger!\n\
+FAT NIGGA ALERT!\n\
 Get close and press [C]^\n\
 for a better look.\n\
-Scary, huh?\n\
+Boof, huh?\n\
 See the Red Court Appeal on top\n\
 of the stake?\n\
 \n\
 When you collect eight of\n\
 them, a Star of David will\n\
 appear in the meadow\n\
-across the bridge."))
+across the bridge.\n\
+I put that on Wallah."))
 
-DEFINE_DIALOG(DIALOG_009, 1, 5, 30, 200, _("\
-Long time, no see! Wow,\n\
-have you gotten fast!\n\
-Have you been training\n\
+DEFINE_DIALOG(DIALOG_009, 1, 5, 80, 200, _("\
+Well, well. Fat mustache bitch,\n\
+have you gotten fatter!\n\
+Have you been speedmaxxing\n\
 on the sly, or is it the\n\
-power of the Stars?\n\
-I've been feeling down\n\
+power of the Stars of David?\n\
+I've been mad as hell\n\
 about losing the last\n\
 race. This is my home\n\
-course--how about a\n\
-rematch?\n\
+course--run it back\n\
+pussy.\n\
 The goal is in\n\
 Windswept Valley.\n\
-Ready?\n\
+Locked in?\n\
 \n\
-//Go//// Don't Go"))
+//Run it back//// Pussy out"))
 
 DEFINE_DIALOG(DIALOG_010, 1, 4, 30, 200, _("\
 You've stepped on the\n\
 Wing Cap Switch. Wearing\n\
 the Wing Cap, you can\n\
-soar through the sky.\n\
+glide through the sky.\n\
 Now Wing Caps will pop\n\
 out of all the red blocks\n\
 you find.\n\
 \n\
 Would you like to Save?\n\
 \n\
-//Yes////No"))
+//Sure////Nah"))
 
 DEFINE_DIALOG(DIALOG_011, 1, 4, 30, 200, _("\
 You've just stepped on\n\
